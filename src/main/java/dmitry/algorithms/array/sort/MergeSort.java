@@ -59,7 +59,7 @@ public class MergeSort {
             a++;
         }
 
-        // Merge tail of right or length. Only one while will be executed.
+        // Merge tail of right or left. Only one while will be executed.
         while(r < right.length){
             arr[a++] = right[r++];
         }
