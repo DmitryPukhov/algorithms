@@ -26,6 +26,13 @@ public class BinarySearchTest {
     }
 
     @Test
+    public void testSearchEmpty(){
+        int[] a = {};
+        int i = testSearch(a,1);
+        assertEquals(-1,i);
+    }
+
+    @Test
     public void testSearchFirst() {
         int[] a = {1,2,3,4,5};
         int b = 1;
