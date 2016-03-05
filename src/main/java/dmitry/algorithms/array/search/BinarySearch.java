@@ -3,12 +3,12 @@ package dmitry.algorithms.array.search;
 /**
  * Created by dima on 3/5/16.
  *
- * Binary search algorithm implementation
+ * Classic binary search algorithm implementation
  */
 public class BinarySearch {
     /**
-     * Search given value in the array using binary search
-     * @param a
+     * Search given value in sorted array using binary search
+     * @param a sorted array
      * @param b
      * @return index of b in array a or -1
      */
