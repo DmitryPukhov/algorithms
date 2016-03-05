@@ -16,17 +16,24 @@ public class BinarySearch {
         if(a.length == 0){
             return -1;
         }
+        // Process interval from array low ... high, starting from the array itself
         int low = 0, high = a.length -1;
         while(low <= high){
+            // Divide array in two parts
             int m = low + (high-low)/2;
-            if(a[m] > b){
+            if(b < a[m]){
+                // If our value is before middle, next look will be in first part
                 high = m-1;
-            } else if (a[m] < b){
+            } else if (b > a[m]){
+                // If our value is after middle, next look will be in second part
                 low = m+1;
             } else {
+                // Cool! Found a value.
                 return m;
             }
         }
+
+        // If we are here, not found.
         return -1;
     }
 }
