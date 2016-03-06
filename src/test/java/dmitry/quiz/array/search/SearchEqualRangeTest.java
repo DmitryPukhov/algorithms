@@ -1,4 +1,4 @@
-package dmitry.algorithms.array.search;
+package dmitry.quiz.array.search;
 
 import org.junit.Test;
 
@@ -8,6 +8,10 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Created by dima on 3/5/16.
+ *
+ * Search equal range quiz.
+ * Given sorted array, some values can repeat.
+ * Find first and last index of
  */
 public class SearchEqualRangeTest {
 
@@ -63,6 +67,14 @@ public class SearchEqualRangeTest {
         int[] range = testSearch(a, b);
         assertEquals(3,range[0]);
         assertEquals(7,range[1]);
+    }
+    @Test
+    public void testSingle() {
+        int[] a = {1};
+        int b = 1;
+        int[] range = testSearch(a, b);
+        assertEquals(0,range[0]);
+        assertEquals(0,range[1]);
     }
 
 }

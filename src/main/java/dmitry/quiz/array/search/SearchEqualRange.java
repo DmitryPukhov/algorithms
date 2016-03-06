@@ -1,4 +1,4 @@
-package dmitry.algorithms.array.search;
+package dmitry.quiz.array.search;
 
 /**
  * Created by dima on 3/5/16.
