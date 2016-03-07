@@ -70,7 +70,7 @@ public class InsertionSortTest {
         int[] a = {1, 2, 4, 5};
         int b = 5;
         int i = testInsertion(a, b);
-        assertEquals(4,i);
+        assertEquals(3,i);
     }
 
     /**

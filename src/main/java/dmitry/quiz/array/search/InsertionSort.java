@@ -38,6 +38,12 @@ public class InsertionSort {
 
             }
         }
+
+        // If b does not in a, binary search can find previous element. Insert after than.
+        if(index < a.length && index >=0 && a[index] < b){
+            index++;
+        }
+
         return index;
     }
 }
