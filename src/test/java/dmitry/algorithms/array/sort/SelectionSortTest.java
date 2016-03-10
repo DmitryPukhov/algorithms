@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class SelectionSortTest  {
 
     /**
-     * Test InsertionSort.sort() on given array
+     * Test InsertionIndex.sort() on given array
      */
     public void testSelectionSort(int[] arr){
         System.out.println(String.format("Selection sort on input: %s", Arrays.toString(arr)));

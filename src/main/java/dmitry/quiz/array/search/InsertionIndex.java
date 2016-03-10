@@ -9,7 +9,7 @@ package dmitry.quiz.array.search;
  * a = 1,3,4,5 and b = -1 => index = 0
  * a = 1,3,4,5 and b = 7 => index = 4
  */
-public class InsertionSort {
+public class InsertionIndex {
 
     /**
      * Find index, where to insert a value

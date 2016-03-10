@@ -8,13 +8,13 @@ import java.util.Arrays;
 /**
  * Created by dima on 3/6/16.
  */
-public class InsertionSortTest {
+public class InsertionIndexTest {
     /**
      * Test insertion index calculation
      */
     public int testInsertion(int[] a, int b) {
         System.out.println(String.format("Insert %d into sorted array: %s", b, Arrays.toString(a)));
-        int i = InsertionSort.insertionIndex(a,b);
+        int i = InsertionIndex.insertionIndex(a, b);
         System.out.println(String.format("Insertion index of %d is %d", b, i));
         return i;
     }
@@ -78,8 +78,8 @@ public class InsertionSortTest {
      */
     @Test
     public void testLastNotExist(){
-        int[] a = {1, 2, 4, 5};
-        int b = 6;
+        int[] a = {1, 3, 5, 6};
+        int b = 7;
         int i = testInsertion(a, b);
         assertEquals(4,i);
     }
