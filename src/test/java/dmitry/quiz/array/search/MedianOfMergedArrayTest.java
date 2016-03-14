@@ -13,10 +13,10 @@ public class MedianOfMergedArrayTest {
     /**
      * Test insertion index calculation
      */
-    public int testMedian(int[] a, int[] b) {
+    public double testMedian(int[] a, int[] b) {
         System.out.println(String.format("Median of arrays: %s and %s", Arrays.toString(a), Arrays.toString(b)));
-        int m = MedianOfMergedArray.findMedian(a,b);
-        System.out.println(String.format("Median is %d", m));
+        double m = MedianOfMergedArray.findMedian(a,b);
+        System.out.println(String.format("Median is %f", m));
         return m;
     }
 
@@ -24,11 +24,23 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testMiddle1(){
+    public void testOdd(){
         int[] a = {1, 2};
-        int[] b = {3};
-        int m = testMedian(a,b);
-        assertEquals(2,m);
+        int[] b = {3,};
+        double m = testMedian(a,b);
+
+        assertEquals(2,m,0.01);
+    }
+    /**
+     * Insert into middle, odd numbers in array
+     */
+    @Test
+    public void testEven(){
+        int[] a = {1, 2};
+        int[] b = {3,4};
+        double m = testMedian(a,b);
+
+        assertEquals(2.5,m,0.01);
     }
 
 }

@@ -2,47 +2,51 @@ package dmitry.quiz.array.search;
 
 /**
  * Created by dima on 3/13/16.
- *
+ * <p/>
  * Given 2 sorted array. Find median of merged sorted array. Should be O(log(n)) complexity.
  */
 public class MedianOfMergedArray {
 
     /**
-     *
      * @param a Sorted array 1
      * @param b Sorted array 2
      * @return the median of merged and sorted array a1,a2
      */
-    public static int findMedian(int[] a, int[] b){
+    public static double findMedian(int[] a, int[] b) {
 
-        int i1=0,i2=a.length-1;
-        int j1=0,j2=b.length-1;
+        int i1 = 0, i2 = a.length, i = 0;
+        int j1 = 0, j2 = b.length, j = 0;
 
         // Find medians of a,b
-        while(i1 <=i2 && j1 <=j2) {
-            int i = (i1+i2)/2;
-            int j = (j1+j2)/2;
+        while (true) {
+            i = (i1 + i2) / 2;
+            j = (j1 + j2) / 2;
+
+            if ((i2 == a.length && j1 == 0)
+                    || (j2 == b.length && i1 == 0)
+                    ) {
+                break;
+            }
             if (a[i] < b[j]) {
                 // Find in left a, right b
-                i1=i+1;
-                j1=j-1;
-            } else {
+                i1 = Math.min(a.length - 1, i + 1);
+                j1 = Math.max(0, j - 1);
+            } else if (b[j] < a[i]) {
                 // Find in right a, left b
-                i2=i-1;
-                j2=j+1;
+                i2 = Math.max(0, i - 1);
+                j2 = Math.min(b.length - 1, j + 1);
+            } else {
+                break;
             }
+
+
         }
 
-        // Only interval inside a or b left for median
-        int median = (i2 >=i1)?
-            a[i1+i2]/2
-        :
-            b[j1+j2]/2;
+        double res = ((a.length + b.length) % 2 == 1) ?
+                Math.max(a[Math.max(0,i - 1)], b[Math.max(0,j - 1)]) :
+                (Math.max(a[Math.max(0,i-1)], Math.max(b[Math.max(0,j-1)], 0)) + Math.min(a[i], b[j])) / 2.0;
 
-        return median;
-
-
-
+        return res;
 
     }
 
