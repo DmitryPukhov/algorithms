@@ -14,14 +14,11 @@ public class MedianOfMergedArray {
      */
     public static double findMedian(int[] a, int[] b) {
 
-        int i1 = 0, i2 = a.length-1, i = 0, iPrev=-1;
-        int j1 = 0, j2 = b.length-1, j = 0, jPrev=-1;
+        int i1 = 0, i2 = a.length-1, i = (i1 + i2) / 2, iPrev=-1;
+        int j1 = 0, j2 = b.length-1, j = (j1 + j2) / 2, jPrev=-1;
 
         // Find medians of a,b
         while(i2 >= i1 && j2 >= j1 && (iPrev!=i || jPrev!=j )) {
-
-            i = (i1 + i2) / 2;
-            j = (j1 + j2) / 2;
 
             if (a[i] < b[j]) {
                 // Find in left a, right b
@@ -38,7 +35,6 @@ public class MedianOfMergedArray {
             jPrev=j;
             i = (i1 + i2) / 2;
             j = (j1 + j2) / 2;
-
         }
 
         double res = 0;
