@@ -14,19 +14,15 @@ public class MedianOfMergedArray {
      */
     public static double findMedian(int[] a, int[] b) {
 
-        int i1 = 0, i2 = a.length, i = 0;
-        int j1 = 0, j2 = b.length, j = 0;
+        int i1 = 0, i2 = a.length-1, i = 0, iPrev=-1;
+        int j1 = 0, j2 = b.length-1, j = 0, jPrev=-1;
 
         // Find medians of a,b
-        while (true) {
+        while(i2 >= i1 && j2 >= j1 && (iPrev!=i || jPrev!=j )) {
+
             i = (i1 + i2) / 2;
             j = (j1 + j2) / 2;
 
-            if ((i2 == a.length && j1 == 0)
-                    || (j2 == b.length && i1 == 0)
-                    ) {
-                break;
-            }
             if (a[i] < b[j]) {
                 // Find in left a, right b
                 i1 = Math.min(a.length - 1, i + 1);
@@ -38,13 +34,20 @@ public class MedianOfMergedArray {
             } else {
                 break;
             }
-
+            iPrev=i;
+            jPrev=j;
+            i = (i1 + i2) / 2;
+            j = (j1 + j2) / 2;
 
         }
 
-        double res = ((a.length + b.length) % 2 == 1) ?
-                Math.max(a[Math.max(0,i - 1)], b[Math.max(0,j - 1)]) :
-                (Math.max(a[Math.max(0,i-1)], Math.max(b[Math.max(0,j-1)], 0)) + Math.min(a[i], b[j])) / 2.0;
+        double res = 0;
+
+        if((a.length + b.length) % 2 == 1) {
+            res = Math.max(a[iPrev], b[jPrev]);
+        } else {
+            res =   (a[iPrev] + b[jPrev]) / 2.0;
+        }
 
         return res;
 
