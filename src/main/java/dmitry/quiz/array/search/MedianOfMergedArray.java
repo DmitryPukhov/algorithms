@@ -40,7 +40,7 @@ public class MedianOfMergedArray {
         double res = 0;
 
         if((a.length + b.length) % 2 == 1) {
-            res = Math.max(a[iPrev], b[jPrev]);
+            res = Math.min(a[iPrev], b[jPrev]);
         } else {
             res =   (a[iPrev] + b[jPrev]) / 2.0;
         }
