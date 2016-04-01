@@ -31,6 +31,19 @@ public class MedianOfMergedArrayTest {
 
         assertEquals(2,m,0.01);
     }
+
+    /**
+     * Insert into middle, odd numbers in array
+     */
+    @Test
+    public void testOdd2(){
+        int[] a = {3};
+        int[] b = {1,2};
+        double m = testMedian(a,b);
+
+        assertEquals(2,m,0.01);
+    }
+
     /**
      * Insert into middle, odd numbers in array
      */
