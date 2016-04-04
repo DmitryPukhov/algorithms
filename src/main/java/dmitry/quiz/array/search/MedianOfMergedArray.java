@@ -34,6 +34,11 @@ public class MedianOfMergedArray {
             //if ((m + n) is odd:
             if ((m + n) %2 == 1){
                 //answer is max(A[i - 1], B[j - 1])
+                if(i-1 < 0){
+                    return b[j-1];
+                } else if (j-1 < 0){
+                    return a[i-1];
+                }
                 return Math.max(a[i - 1], b[j - 1]);
             }
             //if ((m + n) is even:
