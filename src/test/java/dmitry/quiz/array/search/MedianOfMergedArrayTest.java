@@ -37,10 +37,10 @@ public class MedianOfMergedArrayTest {
     @Test
     public void testOdd3(){
         int[] a = {1, 2};
-        int[] b = {3,4,5};
+        int[] b = {3,4,5,6,7};
         double m = testMedian(a,b);
 
-        assertEquals(3,m,0.01);
+        assertEquals(4,m,0.01);
     }
 
     /**
