@@ -21,6 +21,18 @@ public class MedianOfMergedArrayTest {
     }
 
     /**
+     * One array is empty
+     */
+    @Test
+    public void testEmpty(){
+        int[] a = {};
+        int[] b = {20};
+        double m = testMedian(a,b);
+
+        assertEquals(20,m,0.01);
+
+    }
+    /**
      * Insert into middle, odd numbers in array
      */
     @Test
