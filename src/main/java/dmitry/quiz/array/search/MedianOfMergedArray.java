@@ -42,12 +42,26 @@ public class MedianOfMergedArray {
         //if ((m + n) is odd:
         if ((m + n) %2 == 1){
             //answer is max(A[i - 1], B[j - 1])
-            return Math.max(a[Math.max(i-1,0)], b[Math.max(j-1,0)]);
+            if(/*a.length == 0 ||*/ i < 1){
+                return b[Math.max(j - 1, 0)];
+
+            } else if (/*b.length == 0 ||*/ j < 1){
+                return a[Math.max(i - 1, 0)];
+
+            } else {
+                return Math.max(a[Math.max(i - 1, 0)], b[Math.max(j - 1, 0)]);
+            }
         }
         //if ((m + n) is even:
         else {
             //answer is (max(A[i - 1], B[j - 1]) + min(A[i], B[j])) / 2 return res;
-            return (Math.max(a[Math.max(i-1,0)],b[Math.max(j-1,0)]) + Math.min(a[Math.min(Math.max(i,0), a.length-1)],b[Math.min(Math.max(j,0),b.length-1)]))/2.0;
+            if(a.length == 0){
+                return (b[Math.max(j - 1, 0)] + b[Math.min(Math.max(j, 0), b.length - 1)]) / 2.0;
+            } else if(b.length == 0){
+                return (a[Math.max(i - 1, 0)] + a[Math.min(Math.max(i, 0), a.length - 1)]) / 2.0;
+            } else {
+                return (Math.max(a[Math.max(i - 1, 0)], b[Math.max(j - 1, 0)]) + Math.min(a[Math.min(Math.max(i, 0), a.length - 1)], b[Math.min(Math.max(j, 0), b.length - 1)])) / 2.0;
+            }
         }
     }
 
