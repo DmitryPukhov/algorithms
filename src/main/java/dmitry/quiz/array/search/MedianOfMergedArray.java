@@ -17,6 +17,13 @@ public class MedianOfMergedArray {
             throw new IllegalArgumentException("At least one array a or be should be not empty");
         }
 
+        // We need n > m
+        if(b.length < a.length){
+            int[] temp = a;
+            a = b;
+            b = temp;
+        }
+
         double res = -1;
 
         int imin=0,imax=a.length, m = a.length, n = b.length;

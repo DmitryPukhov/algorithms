@@ -53,7 +53,7 @@ public class MedianOfMergedArrayTest {
         int[] b = {-2};
         double m = testMedian(a,b);
 
-        assertEquals(4,m,0.01);
+        assertEquals(-10,m,0.01);
     }
 
 
