@@ -93,4 +93,15 @@ public class MedianOfMergedArrayTest {
         assertEquals(2.5,m,0.01);
     }
 
+    /**
+     * Insert into middle, odd numbers in array
+     */
+    @Test
+    public void testEven2(){
+        int[] a = {-24, -11, -7, 4, 21, 26};
+        int[] b = { 25, 44};
+        double m = testMedian(a,b);
+
+        assertEquals(12.5,m,0.01);
+    }
 }
