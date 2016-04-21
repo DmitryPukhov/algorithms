@@ -5,6 +5,9 @@ package dmitry.algorithms.array.sort;
  * <p/>
  * Quicksort is a divide and conquer algorithm. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
  * <p/>
+ * <p>Worst case: O(n^2)</p>
+ * <p>Average case: O(n*logn)</p>
+ * <p>Best case: O(n*logn)</p></>
  * The steps are:
  * <p/>
  * Pick an element, called a pivot, from the array.
