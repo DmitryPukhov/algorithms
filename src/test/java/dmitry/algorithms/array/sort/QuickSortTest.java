@@ -11,11 +11,11 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by dima on 1/30/16.
  */
-public class QuickSortTest  {
+public class QuickSortTest {
     /**
      * Test QuickSort.sort() on given array
      */
-    public void testQuickSort(int[] arr){
+    public void testQuickSort(int[] arr) {
         System.out.println(String.format("Quick sort on input: %s", Arrays.toString(arr)));
         QuickSort.sort(arr);
         System.out.println(String.format("Result: %s", Arrays.toString(arr)));
@@ -25,23 +25,32 @@ public class QuickSortTest  {
     }
 
     @Test
-    public void testSort5(){
-        int[] arr = {5,4,3,2,1};
+    public void testSort5() {
+        int[] arr = {5, 4, 3, 2, 1};
         testQuickSort(arr);
     }
 
-    @Test public void testSort1(){
+    @Test
+    public void testSort1() {
         int[] arr = {1};
         testQuickSort(arr);
     }
 
-    @Test public void testSortSorted(){
-        int[] arr = {1,2,3,4,5};
+    @Test
+    public void testSortSorted() {
+        int[] arr = {1, 2, 3, 4, 5};
         testQuickSort(arr);
     }
 
-    @Test public void testSortDuplicates(){
-        int[] arr = {5,5, 4,4, 3,3, 2,2, 1,1};
+    @Test
+    public void testSortDuplicates() {
+        int[] arr = {5, 5, 4, 4, 3, 3, 2, 2, 1, 1};
+        testQuickSort(arr);
+    }
+
+    @Test
+    public void testSort4() {
+        int[] arr = {2, 4, 1, 3};
         testQuickSort(arr);
     }
 }

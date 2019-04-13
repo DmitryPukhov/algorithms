@@ -21,26 +21,27 @@ package dmitry.algorithms.array.sort;
 public class QuickSort {
     /**
      * Do quick sort in-place
+     *
      * @param arr
      */
-    public static void sort(int[] arr){
-        quickSort(arr, 0, arr.length);
+    public static void sort(int[] arr) {
+        quickSort(arr, 0, arr.length-1);
     }
 
     /**
      * Recursive quick sort function
+     *
      * @param arr global array
-     * @param start inclusive start of array inside global
-     * @param end exclusive end of array inside global
+     * @param lo  inclusive start of array inside global
+     * @param hi  exclusive end of array inside global
      */
-    private static void quickSort(int[] arr, int start, int end){
-        int p = repartition(arr,start,end);
-
-        if(p==0){
+    private static void quickSort(int[] arr, int lo, int hi) {
+        if (lo >= hi)
             return;
-        }
-        quickSort(arr, start, start + p);
-        quickSort(arr, start + p,  end);
+
+        int p = partition(arr, lo, hi);
+        quickSort(arr, lo, p - 1);
+        quickSort(arr, p + 1, hi);
 
     }
 
@@ -48,29 +49,33 @@ public class QuickSort {
      * Repartition array inside global array.
      * Repartitioned array will consist of 2 parts: above and below pivot.
      * Pivot value is the value at 0 index
+     *
      * @param arr
-     * @param start
-     * @param end
+     * @param lo
+     * @param hi
      * @return
      */
-    private static int repartition(int[] arr, int start, int end){
+    private static int partition(int[] arr, int lo, int hi) {
 
         // Pivot
-        int p = 0;
-        int pVal = arr[p];
+        int pivot = arr[hi];
 
+        int i = lo;
         // Move less items to the right, higher items to the left of the pivot
-        for(int i = start; i < end; i++){
+        for (int j = lo; j < hi; j++) {
             // Move to the left if less than pivot
-            if(arr[i] < pVal){
-                // Swap
-                int temp = arr[i];
-                arr[i] = arr[p];
-                arr[p] = temp;
-                p++;
+            if (arr[j] < pivot) {
+                // Swap arr[i] with arr[j]
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+                i++;
             }
         }
-        return p;
+        // Swap A[i] with pivot
+        arr[hi]=arr[i];
+        arr[i]=pivot;
+         return i;
     }
 
 }
