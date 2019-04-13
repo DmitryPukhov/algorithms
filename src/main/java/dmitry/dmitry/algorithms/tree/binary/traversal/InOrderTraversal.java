@@ -36,7 +36,7 @@ public class InOrderTraversal {
             curr = stack.pop();
             res.add(curr.val);
 
-                curr = curr.right;
+            curr = curr.right;
         }
         return res;
     }
