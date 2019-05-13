@@ -4,6 +4,7 @@ import dmitry.algorithms.tree.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +12,8 @@ public class BinaryTreeTraversalTest {
 
     @Test
     public void preOrder() {
+
+        //Collection
         TreeNode root = new TreeNode(1);
         TreeNode left = new TreeNode(2);
         root.left = left;
