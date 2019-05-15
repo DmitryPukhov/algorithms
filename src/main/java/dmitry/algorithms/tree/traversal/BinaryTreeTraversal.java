@@ -2,8 +2,8 @@ package dmitry.algorithms.tree.traversal;
 
 import dmitry.algorithms.tree.TreeNode;
 
-
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class BinaryTreeTraversal {
@@ -20,28 +20,31 @@ public class BinaryTreeTraversal {
         return res;
     }
 
-
-    public ArrayList<Integer> postOrderIterative(TreeNode root) {
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        if (root == null) return res;
-
-        Stack<TreeNode> stack1 = new Stack<TreeNode>();
-        TreeNode curr = root;
-
-        while (curr != null || !stack1.isEmpty()) {
-
-            while (curr != null) {
-                stack1.push(curr);
-                curr = curr.left;
+    public List<Integer> postOrderIterative(TreeNode root) {
+        List<Integer> traversed = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null || !stack.empty()) {
+            while (node != null) {
+                if (node.right != null) stack.push(node.right);
+                stack.push(node);
+                node = node.left;
             }
 
-            curr = stack1.pop();
-            res.add(curr.val);
-
-            curr = curr.right;
+            node = stack.pop();
+            if (!stack.isEmpty() && stack.peek() == node.right) {
+                TreeNode right = stack.pop();
+                stack.push(node);
+                node = right;
+            } else {
+                traversed.add(node.val);
+                node = null;
+            }
         }
-        return res;
+
+        return traversed;
     }
+
 
     /**
      * Recursive traversal
@@ -55,31 +58,23 @@ public class BinaryTreeTraversal {
         return res;
     }
 
-
-    public ArrayList<Integer> preOrderIterative(TreeNode root) {
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        if (root == null) return res;
-
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode curr = root;
-
-        while (curr != null || !stack.isEmpty()) {
-
-            while (curr != null) {
-                // Preorder add
-                res.add(curr.val);
-                stack.push(curr);
-                curr = curr.left;
+    public List<Integer> preOrderIterative(TreeNode root) {
+        List<Integer> traversed = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                traversed.add(node.val);
+                node = node.left;
             }
-            // curr is null here
-            curr = stack.pop();
-
-            curr = curr.right;
-
-
+            node = stack.pop();
+            node = node.right;
         }
-        return res;
+
+        return traversed;
     }
+
 
     public ArrayList<Integer> inOrderRecursive(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<Integer>();
@@ -90,25 +85,31 @@ public class BinaryTreeTraversal {
         return res;
     }
 
-    public ArrayList<Integer> inOrderIterative(TreeNode root) {
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        if (root == null) return res;
+    /**
+     * In order traversal
+     */
+    public List<Integer> inOrderIterative(TreeNode root) {
+        TreeNode node = root;
 
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode curr = root;
+        List<Integer> traversed = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
 
-        while (curr != null || !stack.isEmpty()) {
+        while (node != null || !stack.empty()) {
 
-            while (curr != null) {
-                stack.push(curr);
-                curr = curr.left;
+            // Go leftwise
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
             }
 
-            curr = stack.pop();
-            res.add(curr.val);
-
-            curr = curr.right;
+            // Node is null here, get last. It's left side is null or already traversed
+            node = stack.pop();
+            traversed.add(node.val);
+            // Traverse right node
+            node = node.right;
         }
-        return res;
+
+        return traversed;
+
     }
 }

@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -15,13 +16,11 @@ public class BinaryTreeTraversalTest {
 
         //Collection
         TreeNode root = new TreeNode(1);
-        TreeNode left = new TreeNode(2);
-        root.left = left;
-        TreeNode right = new TreeNode(3);
-        root.right = right;
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
 
         // Recursive
-        ArrayList<Integer> traversal = new BinaryTreeTraversal().preOrderRecursive(root);
+        List<Integer> traversal = new BinaryTreeTraversal().preOrderRecursive(root);
         assertArrayEquals(new Integer[]{1, 2, 3}, traversal.toArray());
 
         // Iterative
@@ -38,7 +37,7 @@ public class BinaryTreeTraversalTest {
         root.right = right;
 
         // Recursive
-        ArrayList<Integer> traversal = new BinaryTreeTraversal().inOrderRecursive(root);
+        List<Integer> traversal = new BinaryTreeTraversal().inOrderRecursive(root);
         assertArrayEquals(new Integer[]{1, 2, 3}, traversal.toArray());
 
         // Iterative
@@ -55,7 +54,7 @@ public class BinaryTreeTraversalTest {
         root.right = right;
 
         // Recursive
-        ArrayList<Integer> traversal = new BinaryTreeTraversal().postOrderRecursive(root);
+        List<Integer> traversal = new BinaryTreeTraversal().postOrderRecursive(root);
         assertArrayEquals(new Integer[]{1, 2, 3}, traversal.toArray());
 
         // Iterative
