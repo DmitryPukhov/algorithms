@@ -1,11 +1,11 @@
 package dmitry.algorithms.array.sort;
 
 import dmitry.algorithms.TestUtil;
-import junit.framework.TestCase;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 import java.util.Arrays;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by dima on 1/29/16.

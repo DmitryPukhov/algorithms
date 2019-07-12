@@ -1,14 +1,11 @@
 package dmitry.algorithms.array.search;
 
 
-import dmitry.algorithms.TestUtil;
-import dmitry.algorithms.array.search.BinarySearch;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by dima on 3/5/16.

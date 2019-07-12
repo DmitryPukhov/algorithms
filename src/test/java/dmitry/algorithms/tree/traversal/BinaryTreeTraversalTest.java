@@ -3,11 +3,9 @@ package dmitry.algorithms.tree.traversal;
 import dmitry.algorithms.tree.TreeNode;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class BinaryTreeTraversalTest {
 

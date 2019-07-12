@@ -1,7 +1,6 @@
 package dmitry.algorithms.array.sort;
 
 import dmitry.algorithms.TestUtil;
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.Arrays;

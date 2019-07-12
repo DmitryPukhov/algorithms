@@ -1,7 +1,5 @@
 package dmitry.algorithms.array.sort;
 
-import java.util.Arrays;
-
 /**
  * Created by dima on 1/29/16.
  * Insertion sort algorithm implementation

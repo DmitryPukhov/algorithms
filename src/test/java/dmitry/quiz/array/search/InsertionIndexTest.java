@@ -1,9 +1,10 @@
 package dmitry.quiz.array.search;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by dima on 3/6/16.
