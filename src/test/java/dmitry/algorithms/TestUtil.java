@@ -1,5 +1,10 @@
 package dmitry.algorithms;
 
+import dmitry.algorithms.linkedlists.LinkedListNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by dima on 1/29/16.
  *
@@ -23,5 +28,61 @@ public class TestUtil {
         }
 
         return true;
+    }
+
+
+    /**
+     * Compare two linked lists.
+     *
+     * @param otherRoot
+     * @return
+     */
+    public static boolean listsEqual(LinkedListNode root, LinkedListNode otherRoot) {
+        LinkedListNode node = root;
+        LinkedListNode otherNode = otherRoot;
+        while (node.next != null && otherNode.next != null) {
+            if (!node.value.equals(otherNode.value)) {
+                // Found different node, lists aren't equal
+                return false;
+            }
+            node = node.next;
+            otherNode = otherNode.next;
+        }
+        // Equal only if both lists are ended
+        return (node.next == null && otherNode.next == null);
+    }
+
+    /**
+     * Convert linked list to java list of values
+     */
+    public static List asList(LinkedListNode root) {
+        LinkedListNode node = root;
+        List lst = new ArrayList();
+        while(node != null) {
+            lst.add(node.value);
+            node = node.next;
+        }
+        return (lst);
+    }
+
+    /**
+     * Build linked list from given items
+     */
+    public static LinkedListNode<Integer> linkedListOf(Integer... items) {
+        LinkedListNode prevNode = null;
+        LinkedListNode root = null;
+        for (Integer item : items) {
+            LinkedListNode curNode = new LinkedListNode(item);
+            if (prevNode != null) {
+                // Link previous node to current
+                prevNode.next = curNode;
+            } else {
+                // First item, set root to it
+                root = curNode;
+            }
+            prevNode = curNode;
+        }
+
+        return root;
     }
 }
