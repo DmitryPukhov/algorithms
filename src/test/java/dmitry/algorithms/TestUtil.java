@@ -1,6 +1,6 @@
 package dmitry.algorithms;
 
-import dmitry.algorithms.linkedlists.LinkedListNode;
+import dmitry.quiz.linkedlist.LinkedListNode;
 
 import java.util.ArrayList;
 import java.util.List;

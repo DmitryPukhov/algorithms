@@ -3,7 +3,8 @@ package dmitry.quiz.array;
 /**
  * Task: Implement an algorithm to determine if a string has all unique characters. What if you
  * cannot use additional data structures?
- * Solution: move along the string, put characters into hashtable. If already exists, the string
+ * Solution: move along the string, put characters into hashtable. If current char already exists in hash table
+ * => not unique
  */
 public class IsUnique {
 

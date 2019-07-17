@@ -1,4 +1,4 @@
-package dmitry.algorithms.linkedlists;
+package dmitry.quiz.linkedlist;
 
 /**
  * Single linked list node with value and next node link;
