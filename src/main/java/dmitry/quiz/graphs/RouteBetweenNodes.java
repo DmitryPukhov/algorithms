@@ -3,7 +3,7 @@ package dmitry.quiz.graphs;
 /**
  * Route Between Nodes: Given a directed graph, design an algorithm to find out whether there is a
  * route between two nodes
- * Solution: use BFS (Breadth First Search) from node1 until the end or reaching node2.
+ * Solution: use DFS (Depth First Search) from node1 until the end or reaching node2.
  **/
 public class RouteBetweenNodes {
 
