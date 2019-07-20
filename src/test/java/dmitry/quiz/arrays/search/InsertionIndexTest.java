@@ -24,7 +24,7 @@ public class InsertionIndexTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testMiddle1(){
+    public void insertionIndex_middle1(){
         int[] a = {1, 2, 4, 5};
         int b = 3;
         int i = testInsertion(a, b);
@@ -35,7 +35,7 @@ public class InsertionIndexTest {
      * Insert into middle, even numbers in array
      */
     @Test
-    public void testMiddle2(){
+    public void insertionIndex_middle2(){
         int[] a = {1, 2, 4, 5, 6};
         int b = 3;
         int i = testInsertion(a, b);
@@ -46,7 +46,7 @@ public class InsertionIndexTest {
      * Insert value, equal to first element
      */
     @Test
-    public void testFirstExist(){
+    public void insertionIndex_firstExists(){
         int[] a = {1, 2, 4, 5};
         int b = 1;
         int i = testInsertion(a, b);
@@ -57,7 +57,7 @@ public class InsertionIndexTest {
      * Insert value before first
      */
     @Test
-    public void testFirstNotExist(){
+    public void insertionIndex_firstNotExists(){
         int[] a = {1, 2, 4, 5};
         int b = -1;
         int i = testInsertion(a, b);
@@ -67,7 +67,7 @@ public class InsertionIndexTest {
      * Insert value, equal to last element
      */
     @Test
-    public void testLastExist(){
+    public void insertionIndex_lastExists(){
         int[] a = {1, 2, 4, 5};
         int b = 5;
         int i = testInsertion(a, b);
@@ -78,7 +78,7 @@ public class InsertionIndexTest {
      * Insert value after last element
      */
     @Test
-    public void testLastNotExist(){
+    public void insertionIndex_lastNotExists(){
         int[] a = {1, 3, 5, 6};
         int b = 7;
         int i = testInsertion(a, b);

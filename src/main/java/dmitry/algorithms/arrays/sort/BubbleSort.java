@@ -1,4 +1,4 @@
-package dmitry.algorithms.array.sort;
+package dmitry.algorithms.arrays.sort;
 
 /**
  * Created by dima on 1/30/16.

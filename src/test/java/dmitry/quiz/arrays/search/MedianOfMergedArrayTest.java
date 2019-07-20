@@ -24,7 +24,7 @@ public class MedianOfMergedArrayTest {
      * One array is empty
      */
     @Test
-    public void testEmpty(){
+    public void findMedian_empty(){
         int[] a = {};
         int[] b = {20};
         double m = testMedian(a,b);
@@ -36,7 +36,7 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testOdd(){
+    public void findMedian_odd(){
         int[] a = {1, 2};
         int[] b = {3,};
         double m = testMedian(a,b);
@@ -48,7 +48,7 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testOdd4(){
+    public void findMedian_odd4(){
         int[] a = { -43, -25, -18, -15, -10, 9, 39, 40};
         int[] b = {-2};
         double m = testMedian(a,b);
@@ -61,7 +61,7 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testOdd3(){
+    public void findMedian_odd3(){
         int[] a = {1, 2};
         int[] b = {3,4,5,6,7};
         double m = testMedian(a,b);
@@ -73,7 +73,7 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testOdd2(){
+    public void findMedian_odd2(){
         int[] a = {3};
         int[] b = {1,2};
         double m = testMedian(a,b);
@@ -85,7 +85,7 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testEven(){
+    public void findMedian_even(){
         int[] a = {1, 2};
         int[] b = {3,4};
         double m = testMedian(a,b);
@@ -97,7 +97,7 @@ public class MedianOfMergedArrayTest {
      * Insert into middle, odd numbers in array
      */
     @Test
-    public void testEven2(){
+    public void findMedian_even2(){
         int[] a = {-24, -11, -7, 4, 21, 26};
         int[] b = { 25, 44};
         double m = testMedian(a,b);

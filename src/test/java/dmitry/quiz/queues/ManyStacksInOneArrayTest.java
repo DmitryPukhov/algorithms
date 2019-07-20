@@ -14,7 +14,7 @@ import org.powermock.reflect.Whitebox;
 public class ManyStacksInOneArrayTest {
 
     @Test
-    public void pushPopSingleItem() {
+    public void pushPop_singleItem() {
         ManyStacksInOneArray<Integer> stack = new ManyStacksInOneArray<>(3, 10);
         stack.push(1, 1);
         stack.push(2, 2);
@@ -30,7 +30,7 @@ public class ManyStacksInOneArrayTest {
     }
 
     @Test
-    public void push() {
+    public void push_multipleItems() {
         // Push items to different stacks and check private field values
         ManyStacksInOneArray<Integer> stack = new ManyStacksInOneArray<>(3, 10);
 
@@ -52,7 +52,7 @@ public class ManyStacksInOneArrayTest {
     }
 
     @Test
-    public void pop() {
+    public void pop_multipleItems() {
         // Pop items from predefined stack
         ManyStacksInOneArray<Integer> stack = new ManyStacksInOneArray<>(3, 10);
 

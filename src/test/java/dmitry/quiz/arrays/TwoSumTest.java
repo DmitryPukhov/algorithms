@@ -12,6 +12,5 @@ public class TwoSumTest {
         int target = 6;
         int[] res = new TwoSum().twoSum(nums, target);
         assertArrayEquals(new int[]{1, 2}, res);
-
     }
 }

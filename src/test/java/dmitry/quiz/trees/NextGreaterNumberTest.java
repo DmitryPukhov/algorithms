@@ -1,6 +1,6 @@
 package dmitry.quiz.trees;
 
-import dmitry.algorithms.tree.TreeNode;
+import dmitry.algorithms.trees.TreeNode;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -42,7 +42,7 @@ public class NextGreaterNumberTest {
 
 
     @Test
-    public void getSuccessor() {
+    public void getSuccessor_mainCase() {
         TreeNode root = createTree();
         NextGreaterNumber algo = new NextGreaterNumber();
         int result = algo.getSuccessor(root, 97).val;

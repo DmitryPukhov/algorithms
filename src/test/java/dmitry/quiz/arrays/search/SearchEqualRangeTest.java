@@ -26,7 +26,7 @@ public class SearchEqualRangeTest {
     }
 
     @Test
-    public void testSearchEmpty() {
+    public void searchRange_empty() {
         int[] a = {};
         int b = 0;
         int[] range = testSearch(a, b);
@@ -35,7 +35,7 @@ public class SearchEqualRangeTest {
     }
 
     @Test
-    public void testSearchMiddle() {
+    public void searchRange_middle() {
         int[] a = {1,2,3,4,4,4,4,4,5};
         int b = 4;
         int[] range = testSearch(a, b);
@@ -44,7 +44,7 @@ public class SearchEqualRangeTest {
     }
 
     @Test
-    public void testSearchNo() {
+    public void searchRange_no() {
         int[] a = {1,2,3,4,4,4,4,4,5};
         int b = 7;
         int[] range = testSearch(a, b);
@@ -53,7 +53,7 @@ public class SearchEqualRangeTest {
     }
 
     @Test
-    public void testSearchStart() {
+    public void searchRange_start() {
         int[] a = {1,1,1,2,3,4,5};
         int b = 1;
         int[] range = testSearch(a, b);
@@ -61,7 +61,7 @@ public class SearchEqualRangeTest {
         assertEquals(2,range[1]);
     }
     @Test
-    public void testSearchEnd() {
+    public void searchRange_end() {
         int[] a = {1,2,3,4,4,4,4,4};
         int b = 4;
         int[] range = testSearch(a, b);
@@ -69,7 +69,7 @@ public class SearchEqualRangeTest {
         assertEquals(7,range[1]);
     }
     @Test
-    public void testSingle() {
+    public void searchRange_single() {
         int[] a = {1};
         int b = 1;
         int[] range = testSearch(a, b);

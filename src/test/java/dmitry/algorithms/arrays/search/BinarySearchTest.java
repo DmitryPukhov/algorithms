@@ -1,4 +1,4 @@
-package dmitry.algorithms.array.search;
+package dmitry.algorithms.arrays.search;
 
 
 import org.junit.Test;
@@ -23,14 +23,14 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testSearchEmpty(){
+    public void search_empty(){
         int[] a = {};
         int i = testSearch(a,1);
         assertEquals(-1,i);
     }
 
     @Test
-    public void testSearchFirst() {
+    public void search_first() {
         int[] a = {1,2,3,4,5};
         int b = 1;
         int i = testSearch(a, b);
@@ -38,7 +38,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testSearchLast() {
+    public void search_last() {
         int[] a = {1,2,3,4,5};
         int b = 5;
         int i = testSearch(a, b);
@@ -46,7 +46,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testSearchMiddle() {
+    public void search_middle() {
         int[] a = {1,2,3,4,5};
         int b = 4;
         int i = testSearch(a, b);
@@ -54,7 +54,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testSearch1Yes() {
+    public void search_1_yes() {
         int[] a = {1};
         int b = 1;
         int i = testSearch(a, b);
@@ -62,7 +62,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void testSearch1No() {
+    public void search_1_no() {
         int[] a = {1};
         int b = 3;
         int i = testSearch(a, b);
