@@ -1,4 +1,4 @@
-package dmitry.algorithms.tree;
+package dmitry.algorithms.trees;
 
 /**
  * Definition for a binary tree node.

@@ -1,4 +1,4 @@
-package dmitry.algorithms.array.sort;
+package dmitry.algorithms.arrays.sort;
 
 import dmitry.algorithms.TestUtil;
 import junit.framework.TestCase;
@@ -6,10 +6,12 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * Created by dima on 1/30/16.
  */
-public class BubbleSortTest extends TestCase {
+public class BubbleSortTest {
 
     /**
      * Test BubbleSort.sort() on given array
@@ -24,22 +26,22 @@ public class BubbleSortTest extends TestCase {
     }
 
     @Test
-    public void testSort5(){
+    public void sort_5(){
         int[] arr = {5,4,3,2,1};
         testBubbleSort(arr);
     }
 
-    @Test public void testSort1(){
+    @Test public void sort_1(){
         int[] arr = {1};
         testBubbleSort(arr);
     }
 
-    @Test public void testSortSorted(){
+    @Test public void sort_sorted(){
         int[] arr = {1,2,3,4,5};
         testBubbleSort(arr);
     }
 
-    @Test public void testSortDuplicates(){
+    @Test public void sort_duplicates(){
         int[] arr = {5,5, 4,4, 3,3, 2,2, 1,1};
         testBubbleSort(arr);
     }

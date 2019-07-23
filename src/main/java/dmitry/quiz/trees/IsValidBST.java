@@ -1,6 +1,6 @@
 package dmitry.quiz.trees;
 
-import dmitry.algorithms.tree.TreeNode;
+import dmitry.algorithms.trees.TreeNode;
 
 public class IsValidBST {
 

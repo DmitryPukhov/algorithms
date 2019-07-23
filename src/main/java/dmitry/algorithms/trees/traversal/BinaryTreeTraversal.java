@@ -1,6 +1,6 @@
-package dmitry.algorithms.tree.traversal;
+package dmitry.algorithms.trees.traversal;
 
-import dmitry.algorithms.tree.TreeNode;
+import dmitry.algorithms.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
